@@ -70,14 +70,6 @@ class App extends Component {
       return null;
     }
   }
-  imageFromServer() {
-    if (this.state.serverImage) {
-      return <div className='result-image'>
-        <p>Image from server</p>
-        <img src={this.state.serverImage} />
-      </div>;
-    }
-  }
   render() {
     return (
       <div>
@@ -86,7 +78,6 @@ class App extends Component {
         </h1>
         <UserAvatar onImageUploaded={this.onImageUploaded.bind(this)} src={this.state.userAvatar}/>
         {this.imageResizer()}
-        {this.imageFromServer()}
         {this.errorMessage()}
       </div>
     );
