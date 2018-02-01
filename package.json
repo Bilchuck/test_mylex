@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "base64-img": "^1.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "jimp": "^0.2.28",

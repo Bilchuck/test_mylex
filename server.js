@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const Jimp = require("jimp");
-const base64Img = require('base64-img')
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -20,6 +19,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/build/index.html'));
 });
+
 app.post(`/img`, ({body: {img}}, res) => {
     img = img.split('data:image/png;base64,')[1];
     const buffer = new Buffer(img, 'base64');
